@@ -245,7 +245,7 @@ return [
             'submenu' => [
                 [
                     'text' => 'Solucitudes Pendientes',
-                    'url'  => '#',
+                    'route'  => 'datos',
                     'icon' => 'fas fa-clipboard-list',
                 ],
 
@@ -258,7 +258,7 @@ return [
             'submenu' => [
                 [
                     'text' => 'Solucitudes Pendientes',
-                    'url'  => '#',
+                    'route'  => 'datos',
                     'icon' => 'fas fa-clipboard-list',
                 ],
 
