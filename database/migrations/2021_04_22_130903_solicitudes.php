@@ -19,6 +19,7 @@ class Solicitudes extends Migration
             $table->string('curp');
             $table->string('folio');
             $table->text('informacion');
+            $table->softDeletes();
             $table->timestamps();
         });
     }

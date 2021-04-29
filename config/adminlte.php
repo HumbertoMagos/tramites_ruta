@@ -126,7 +126,7 @@ return [
     'classes_content_wrapper' => '',
     'classes_content_header' => '',
     'classes_content' => '',
-    'classes_sidebar' => 'sidebar-light-success elevation-4',
+    'classes_sidebar' => 'sidebar-light-secondary elevation-4',
     'classes_sidebar_nav' => '',
     'classes_topnav' => '',
     'classes_topnav_nav' => 'navbar-expand',
@@ -229,11 +229,18 @@ return [
             'text' => 'REVISIÓN JUD',
             'url'  => '#',
             'icon' => 'far fa-user',
+            'can' => ['admin', 'solicitudes.jud'],
             'submenu' => [
                 [
                     'text' => 'Solucitudes Pendientes',
                     'route'  => 'datos',
                     'icon' => 'fas fa-clipboard-list',
+                ],
+                [
+                    'text' => 'Reportes',
+                    'icon' => 'fas fa-clipboard-list',
+                    'url'  => '#',
+
                 ],
 
             ],
@@ -242,11 +249,18 @@ return [
             'text' => 'REVISIÓN SUB DIRECCIÓN',
             'url'  => '#',
             'icon' => 'fas fa-user',
+            'can' => ['admin', 'solicitudes.subdirector'],
             'submenu' => [
                 [
                     'text' => 'Solucitudes Pendientes',
                     'route'  => 'datos',
                     'icon' => 'fas fa-clipboard-list',
+                ],
+                [
+                    'text' => 'Reportes',
+                    'icon' => 'fas fa-clipboard-list',
+                    'url'  => '#',
+
                 ],
 
             ],
@@ -255,11 +269,17 @@ return [
             'text' => 'REVISIÓN DIRECCIÓN',
             'url'  => '#',
             'icon' => 'fas fa-user-tie',
+            'can' => ['admin', 'solicitudes.director'],
             'submenu' => [
                 [
                     'text' => 'Solucitudes Pendientes',
                     'route'  => 'datos',
                     'icon' => 'fas fa-clipboard-list',
+                ],
+                [
+                    'text' => 'Reportes',
+                    'icon' => 'fas fa-clipboard-list',
+                    'url'  => '#',
                 ],
 
             ],

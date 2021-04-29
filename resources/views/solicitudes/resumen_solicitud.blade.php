@@ -41,22 +41,44 @@
     </div>
     <!-- The Modal -->
   <div class="modal fade" id="myModal">
-    <div class="modal-dialog">
+    <div class="modal-dialog modal-dialog-centered">
       <div class="modal-content">
       
         <!-- Modal Header -->
         <div class="modal-header">
           <h3 class="modal-title  text-center">CONFIRMACION</h4>
         </div>
-        
+        <div class="alert alert-warning">
+          <strong>Atencion!</strong> estas seguro que deseas firmar esta solicitud?
+        </div>
         <!-- Modal body -->
         <div class="modal-body">
-            <h4>Presiona el boton de confirmar para mandar la revision de solicitud</h4>
+          <div class="row text-center">
+            <div class="col-md-12">
+                <label>PLACA:</label>
+                <div class="input-group-prepend">
+                    <input type="text" class="form-control" value="{{$solicitud->placa}}" readonly>
+                </div><br><br>
+                
+            </div>
+            <div class="col-md-12">
+                <label>CURP:</label>
+                <div class="input-group-prepend">
+                    <input type="text" class="form-control" value="{{$solicitud->curp}}" readonly>
+                </div><br><br>
+            </div>
+            <div class="col-md-12">
+              <label>FOLIO:</label>
+                <div class="input-group-prepend">
+                    <input type="text" class="form-control" value="{{$solicitud->folio}}" readonly>
+                </div>
+          </div>
+        </div>
         </div>
         
         <!-- Modal footer -->
         <div class="modal-footer">
-          <a type="button"  class="btn btn-danger" data-dismiss="modal">Cancelar</a>
+          <a type="button"  class="btn btn-danger text-white" data-dismiss="modal">Cancelar</a>
           <a href="{{route('finaliza')}}"  class="btn btn-success">Confirmar</a>
         </div>
         

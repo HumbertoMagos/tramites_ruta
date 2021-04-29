@@ -1,6 +1,6 @@
 @extends('adminlte::page')
 
-@section('title', 'Dashboard')
+@section('title', 'Solicitudes')
 
 @section('content_header')
     <h1>SOLICITUDES PENDIENTES</h1>
@@ -9,7 +9,17 @@
 @section('content')
 <div class="card">
         <div class="card-body">
+            <div class="row">
+                <div class="col-md-6">
+                    <a href="{{route('califica')}}" class="btn btn-primary" >Firmar todas</a>
+                </div>
+                <div class="col-md-6">
+                    
+                </div>
+            </div>
+            <br>
             <table class="table table-hover" id="listado" style="width:100%">
+
                 <thead class="bg-light">
                     <tr>
                         <th>PLACA</th>
@@ -17,7 +27,8 @@
                         <th>FOLIO</th>
                         <th>INFORMACION</th>
                         <th>FECHA TRAMITE</th>
-                        <th>ACCION</th>
+                        <th></th>
+                        <th></th>
 
                     </tr>
                 </thead>
@@ -30,18 +41,11 @@
                             <td>{{$solicitud->folio}}</td>
                             <td>{{$solicitud->informacion}}</td>
                             <td>{{$solicitud->created_at}}</td>
-                            <td>
-                                <button type="button" class="btn btn-success dropdown-toggle" data-toggle="dropdown">
-                                    <i class="fas fa-bars"></i>
-                                    </button>
-                                    <div class="dropdown-menu text-center">
-                                        <a href="{{route('resumen', $solicitud->id)}}" class="btn btn-outline-success">Ver Solicitud     
-                                        </a><br>
-
-                                        <button class="btn btn-outline-danger">Cancelar Solicitud
-                                        </button>
-                                    </div>
-                            </td>
+                            <td><a href="{{route('resumen', $solicitud->id)}}" class="btn btn-outline-success btn-sm">Ver Solicitud     
+                            </a><br></td>
+                            <td><a href="{{route('elimina', $solicitud->id)}}" class="btn btn-outline-danger btn-sm">Cancelar Solicitud
+                            </button></td>
+                               
                         </tr>
                     @endforeach
 

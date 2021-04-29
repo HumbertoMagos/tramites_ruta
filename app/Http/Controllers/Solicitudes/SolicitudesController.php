@@ -29,4 +29,18 @@ class SolicitudesController extends Controller
         return view('home');
 
     }
+
+    public function update(){
+        Alert::success('LISTO', 'todas las solicitudes han sido firmadas');
+        return view('home');
+
+    }
+
+    public function delete($id){
+        $elimina = Solicitudes::find($id);
+        $elimina->delete();
+
+        Alert::success('ELIMINADA', 'la solicitud ah sido eliminada');
+        return view('home');
+    }
 }
