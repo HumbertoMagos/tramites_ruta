@@ -14,7 +14,7 @@ use App\Http\Controllers\Solicitudes\SolicitudesController;
 */
 
 Route::get('/', function () {
-    return view('home');
+    return view('welcome');
 });
 
 Auth::routes();
