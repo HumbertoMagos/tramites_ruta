@@ -2,16 +2,9 @@
 
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\Solicitudes\SolicitudesController;
-/*
-|--------------------------------------------------------------------------
-| Web Routes
-|--------------------------------------------------------------------------
-|
-| Here is where you can register web routes for your application. These
-| routes are loaded by the RouteServiceProvider within a group which
-| contains the "web" middleware group. Now create something great!
-|
-*/
+use App\Http\Controllers\Solicitudes\direccion\SolicitudesDireccionController;
+use App\Http\Controllers\Solicitudes\subdireccion\SolicitudesSubController;
+use App\Http\Controllers\Solicitudes\jud\SolicitudesJudController;
 
 Route::get('/', function () {
     return view('welcome');
@@ -22,10 +15,35 @@ Auth::routes();
 Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
 
 
-Route::get('/solicitudes_Pendientes', [SolicitudesController::class, 'TablaSolicitudes'])->name('datos');
+Route::prefix('direccion')->group(function(){
 
-Route::get('/resumen_solicitud/{id}', [SolicitudesController::class, 'ResumenSolicitud'])->name('resumen');
-Route::get('/elimina_solicitud/{id}', [SolicitudesController::class, 'delete'])->name('elimina');
-Route::get('/califica_solicitud', [SolicitudesController::class, 'update'])->name('califica');
+    Route::get('/solicitudes_pendientes', [SolicitudesDireccionController::class, 'TablasSolicitudesDireccion'])->name('direccion:datos');
+    Route::get('/resumen_solicitud/{id}', [SolicitudesDireccionController::class, 'ResumenSolicitudDireccion'])->name('direccion:resumen');
+    Route::get('/elimina_solicitud/{id}', [SolicitudesDireccionController::class, 'eliminaSolicitudDireccion'])->name('direccion:elimina');
+    Route::get('/califica_solicitud', [SolicitudesDireccionController::class, 'FirmaTodasDireccion'])->name('direccion:califica');
+    Route::get('/finaliza_revision', [SolicitudesDireccionController::class, 'FinalizaSolicitud'])->name('direccion:finaliza');
 
-Route::get('/finaliza_revision', [SolicitudesController::class, 'FinalizaSolicitud'])->name('finaliza');
+});
+
+
+Route::prefix('subdireccion')->group(function(){
+
+    Route::get('/solicitudes_pendientes', [SolicitudesSubController::class, 'TablasSolicitudesSub'])->name('sub:datos');
+    Route::get('/resumen_solicitud/{id}', [SolicitudesSubController::class, 'ResumenSolicitud'])->name('sub:resumen');
+    Route::get('/elimina_solicitud/{id}', [SolicitudesSubController::class, 'eliminaSolicitudSub'])->name('sub:elimina');
+    Route::get('/califica_solicitud', [SolicitudesSubController::class, 'FirmaTodasSub'])->name('sub:califica');
+    Route::get('/finaliza_revision', [SolicitudesSubController::class, 'FinalizaSolicitud'])->name('sub:finaliza');
+
+});
+
+
+Route::prefix('jud')->group(function(){
+
+    Route::get('/solicitudes_pendientes', [SolicitudesJudController::class, 'TablasSolicitudesJud'])->name('jud:datos');
+    Route::get('/resumen_solicitud/{id}', [SolicitudesJudController::class, 'ResumenSolicitudJud'])->name('jud:resumen');
+    Route::get('/elimina_solicitud/{id}', [SolicitudesJudController::class, 'eliminaSolicitudJud'])->name('jud:elimina');
+    Route::get('/califica_solicitud', [SolicitudesJudController::class, 'FirmaTodasJud'])->name('jud:califica');
+    Route::get('/finaliza_revision', [SolicitudesJudController::class, 'FinalizaSolicitudJud'])->name('jud:finaliza');
+
+});
+

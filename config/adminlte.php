@@ -233,7 +233,7 @@ return [
             'submenu' => [
                 [
                     'text' => 'Solucitudes Pendientes',
-                    'route'  => 'datos',
+                    'route'  => 'jud:datos',
                     'icon' => 'fas fa-clipboard-list',
                 ],
                 [
@@ -246,14 +246,14 @@ return [
             ],
         ],
         [
-            'text' => 'REVISIÓN SUB DIRECCIÓN',
+            'text' => 'REVISIÓN SUBDIRECCIÓN',
             'url'  => '#',
             'icon' => 'fas fa-user',
             'can' => ['admin', 'solicitudes.subdirector'],
             'submenu' => [
                 [
                     'text' => 'Solucitudes Pendientes',
-                    'route'  => 'datos',
+                    'route'  => 'sub:datos',
                     'icon' => 'fas fa-clipboard-list',
                 ],
                 [
@@ -273,7 +273,7 @@ return [
             'submenu' => [
                 [
                     'text' => 'Solucitudes Pendientes',
-                    'route'  => 'datos',
+                    'route'  => 'direccion:datos',
                     'icon' => 'fas fa-clipboard-list',
                 ],
                 [

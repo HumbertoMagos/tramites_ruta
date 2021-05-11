@@ -1,6 +1,6 @@
 @extends('adminlte::page')
 
-@section('title', 'Solicitudes')
+@section('title', 'dirección: Solicitudes')
 
 @section('content_header')
     <h1>SOLICITUDES PENDIENTES</h1>
@@ -11,14 +11,14 @@
         <div class="card-body">
             <div class="row">
                 <div class="col-md-6">
-                    <a href="{{route('califica')}}" class="btn btn-primary" >Firmar todas</a>
+                    <button class="btn btn-outline-success" data-toggle="modal" data-target="#myModal">Firmar todas</a>
                 </div>
                 <div class="col-md-6">
                     
                 </div>
             </div>
             <br>
-            <table class="table table-hover" id="listado" style="width:100%">
+            <table class="table display"  id="listado" style="width:100%">
 
                 <thead class="bg-light">
                     <tr>
@@ -41,9 +41,9 @@
                             <td>{{$solicitud->folio}}</td>
                             <td>{{$solicitud->informacion}}</td>
                             <td>{{$solicitud->created_at}}</td>
-                            <td><a href="{{route('resumen', $solicitud->id)}}" class="btn btn-outline-success btn-sm">Ver Solicitud     
+                            <td><a href="{{route('direccion:resumen', $solicitud->id)}}" class="btn btn-outline-success btn-sm">Ver Solicitud     
                             </a><br></td>
-                            <td><a href="{{route('elimina', $solicitud->id)}}" class="btn btn-outline-danger btn-sm">Cancelar Solicitud
+                            <td><a href="{{route('direccion:elimina', $solicitud->id)}}" class="btn btn-outline-danger btn-sm">Cancelar Solicitud
                             </button></td>
                                
                         </tr>
@@ -54,6 +54,46 @@
             </table>
         
     </div>
+
+     <div class="modal fade" id="myModal">
+    <div class="modal-dialog modal-dialog-centered">
+      <div class="modal-content">
+      
+        <!-- Modal Header -->
+        <div class="modal-header">
+          <h3 class="modal-title  text-center">CONFIRMACIÓN</h4>
+        </div>
+        <div class="alert bg-warning">
+          <strong>Atencion!</strong> ¿estas seguro que deseas firmar todas las solicitudes?
+        </div>
+        <!-- Modal body -->
+        <div class="modal-body">
+          <div class="row text-center">
+            <div class="col-md-12">
+                <label>PASSWORD:</label>
+                <div class="input-group-prepend">
+                    <input type="password" class="form-control" value="" required>
+                </div><br><br>
+            </div>
+            <div class="col-md-12">
+              <label>SUBIR ARCHIVO:</label>
+                <div class="input-group-prepend">
+                    <input type="file" class="form-control-file" value="" required>
+                </div>
+            </div>
+        </div>
+        </div>
+        
+        <!-- Modal footer -->
+        <div class="modal-footer">
+          <a type="button"  class="btn btn-danger text-white" data-dismiss="modal">Cancelar</a>
+          <a href="{{route('direccion:califica')}}"  class="btn btn-success">Confirmar</a>
+        </div>
+        
+      </div>
+    </div>
+  </div>
+
 </div>    
 @stop
 

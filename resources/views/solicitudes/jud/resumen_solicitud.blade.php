@@ -35,9 +35,9 @@
                 </div>
             </div>
         </div><br><br><br>
-        <button type="button" class="btn btn-outline-success btn-block" data-toggle="modal" data-target="#myModal">Aceptar <i class="far fa-check-circle"></i></button>
+        <button type="button" class="btn btn-outline-success btn-block" data-toggle="modal" data-target="#myModal">Firmar <i class="far fa-check-circle"></i></button>
 
-        <a href="{{route('datos')}}" class="btn btn-outline-danger btn-block">Rechazar <i class="far fa-times-circle"></i></a>
+        <a href="{{route('jud:datos')}}" class="btn btn-outline-danger btn-block">Rechazar <i class="far fa-times-circle"></i></a>
     </div>
     <!-- The Modal -->
   <div class="modal fade" id="myModal">
@@ -56,30 +56,30 @@
           <div class="row text-center">
             <div class="col-md-12">
                 <label>PLACA:</label>
-                <div class="input-group-prepend">
-                    <input type="text" class="form-control" value="{{$solicitud->placa}}" readonly>
+                <div class="input-group">
+                    <input type="text" class="form-control" value="" required>
                 </div><br><br>
                 
             </div>
             <div class="col-md-12">
-                <label>CURP:</label>
+                <label>PASSWORD:</label>
                 <div class="input-group-prepend">
-                    <input type="text" class="form-control" value="{{$solicitud->curp}}" readonly>
+                    <input type="password" class="form-control" value="" required>
                 </div><br><br>
             </div>
             <div class="col-md-12">
-              <label>FOLIO:</label>
+              <label>SUBIR ARCHIVO:</label>
                 <div class="input-group-prepend">
-                    <input type="text" class="form-control" value="{{$solicitud->folio}}" readonly>
+                    <input type="file" class="form-control-file" value="" required>
                 </div>
-          </div>
+            </div>
         </div>
         </div>
         
         <!-- Modal footer -->
         <div class="modal-footer">
           <a type="button"  class="btn btn-danger text-white" data-dismiss="modal">Cancelar</a>
-          <a href="{{route('finaliza')}}"  class="btn btn-success">Confirmar</a>
+          <a href="{{route('jud:finaliza')}}"  class="btn btn-success">Confirmar</a>
         </div>
         
       </div>
@@ -93,5 +93,4 @@
 @stop
 
 @section('js')
-    <script> console.log('Hi!'); </script>
 @stop
