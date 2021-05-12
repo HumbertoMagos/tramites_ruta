@@ -2,9 +2,10 @@
 
 namespace App\Http\Controllers\Solicitudes\subdireccion;
 
-use App\Http\Controllers\Controller;
-use Illuminate\Http\Request;
 use App\Models\Solicitudes;
+use Illuminate\Http\Request;
+use App\Http\Requests\StoreValidar;
+use App\Http\Controllers\Controller;
 use RealRashid\SweetAlert\Facades\Alert;
 
 class SolicitudesSubController extends Controller
@@ -26,10 +27,10 @@ class SolicitudesSubController extends Controller
         return redirect('home');
     }
 
-    public function FirmaTodasSub(){
+    public function FirmaTodasSub(StoreValidar $request){
+        $request->validated();
         Alert::success('LISTO', 'todas las solicitudes han sido firmadas');
         return redirect('home');
-
     }
 
     public function eliminaSolicitudSub($id){
