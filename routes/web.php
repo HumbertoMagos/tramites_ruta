@@ -21,7 +21,7 @@ Route::prefix('direccion')->group(function(){
     Route::get('/resumen_solicitud/{id}', [SolicitudesDireccionController::class, 'ResumenSolicitudDireccion'])->name('direccion:resumen');
     Route::get('/elimina_solicitud/{id}', [SolicitudesDireccionController::class, 'eliminaSolicitudDireccion'])->name('direccion:elimina');
     Route::get('/califica_solicitud', [SolicitudesDireccionController::class, 'FirmaTodasDireccion'])->name('direccion:califica');
-    Route::get('/finaliza_revision', [SolicitudesDireccionController::class, 'FinalizaSolicitud'])->name('direccion:finaliza');
+    Route::get('/finaliza_revision', [SolicitudesDireccionController::class, 'FinalizaSolicitudDireccion'])->name('direccion:finaliza');
 
 });
 
@@ -29,10 +29,10 @@ Route::prefix('direccion')->group(function(){
 Route::prefix('subdireccion')->group(function(){
 
     Route::get('/solicitudes_pendientes', [SolicitudesSubController::class, 'TablasSolicitudesSub'])->name('sub:datos');
-    Route::get('/resumen_solicitud/{id}', [SolicitudesSubController::class, 'ResumenSolicitud'])->name('sub:resumen');
+    Route::get('/resumen_solicitud/{id}', [SolicitudesSubController::class, 'ResumenSolicitudSub'])->name('sub:resumen');
     Route::get('/elimina_solicitud/{id}', [SolicitudesSubController::class, 'eliminaSolicitudSub'])->name('sub:elimina');
     Route::get('/califica_solicitud', [SolicitudesSubController::class, 'FirmaTodasSub'])->name('sub:califica');
-    Route::get('/finaliza_revision', [SolicitudesSubController::class, 'FinalizaSolicitud'])->name('sub:finaliza');
+    Route::get('/finaliza_revision', [SolicitudesSubController::class, 'FinalizaSolicitudSub'])->name('sub:finaliza');
 
 });
 

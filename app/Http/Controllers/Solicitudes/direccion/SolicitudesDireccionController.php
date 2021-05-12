@@ -19,7 +19,6 @@ class SolicitudesDireccionController extends Controller
 
     public function ResumenSolicitudDireccion($id){
         $solicitud = Solicitudes::find($id);
-        dd($solicitud);
         return view('solicitudes.direccion.resumen_solicitud', compact('solicitud'));
     }
 
