@@ -50,7 +50,7 @@
                     class="far fa-times-circle"></i></a>
         </div>
         <!-- The Modal -->
-        | <form method="POST" action="{{ route('sub:califica') }}" enctype="multipart/form-data">
+        | <form method="POST" action="{{ route('sub:calificauna') }}" enctype="multipart/form-data">
             @csrf
             <div class="modal fade" id="myModal">
                 <div class="modal-dialog modal-dialog-centered">

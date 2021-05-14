@@ -2,10 +2,11 @@
 
 namespace App\Http\Controllers\Solicitudes\direccion;
 
-use App\Http\Controllers\Controller;
-use App\Http\Requests\StoreValidar;
-use Illuminate\Http\Request;
 use App\Models\Solicitudes;
+use Illuminate\Http\Request;
+use App\Http\Requests\StoreValidar;
+use App\Http\Controllers\Controller;
+use App\Http\Requests\StoreValidarUna;
 use RealRashid\SweetAlert\Facades\Alert;
 
 
@@ -31,7 +32,11 @@ class SolicitudesDireccionController extends Controller
     }
     public function FirmaTodasDireccion(StoreValidar $request)
     {
-        $request->validated();
+        Alert::success('LISTO', 'todas las solicitudes han sido firmadas');
+        return redirect('home');
+    }
+    public function FirmaUnaDireccion(StoreValidarUna $request)
+    {
         Alert::success('LISTO', 'todas las solicitudes han sido firmadas');
         return redirect('home');
     }

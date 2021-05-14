@@ -50,7 +50,7 @@
             <a href="{{ route('jud:datos') }}" class="btn btn-outline-danger btn-block">Rechazar <i
                     class="far fa-times-circle"></i></a>
         </div>
-        | <form method="POST" action="{{ route('jud:califica') }}" enctype="multipart/form-data">
+        | <form method="POST" action="{{ route('jud:calificauna') }}" enctype="multipart/form-data">
             @csrf
             <!-- The Modal -->
             <div class="modal fade" id="myModal">

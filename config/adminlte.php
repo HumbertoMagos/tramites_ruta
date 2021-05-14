@@ -224,7 +224,7 @@ return [
     */
 
     'menu' => [
-        
+
         [
             'text' => 'REVISIÓN JUD',
             'url'  => '#',
@@ -284,7 +284,7 @@ return [
 
             ],
         ],
-       
+
     ],
 
     /*

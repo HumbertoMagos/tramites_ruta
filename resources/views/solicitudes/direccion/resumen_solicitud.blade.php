@@ -51,7 +51,7 @@
                     class="far fa-times-circle"></i></a>
         </div>
 
-        | <form method="POST" action="{{ route('direccion:califica') }}" enctype="multipart/form-data">
+        | <form method="POST" action="{{ route('direccion:calificauna') }}" enctype="multipart/form-data">
             @csrf
             <!-- The Modal -->
             <div class="modal fade" id="myModal">

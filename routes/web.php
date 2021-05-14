@@ -22,6 +22,7 @@ Route::prefix('direccion')->group(function(){
     Route::get('/resumen_solicitud/{id}', [SolicitudesDireccionController::class, 'ResumenSolicitudDireccion'])->name('direccion:resumen');
     Route::get('/elimina_solicitud/{id}', [SolicitudesDireccionController::class, 'eliminaSolicitudDireccion'])->name('direccion:elimina');
     Route::post('/califica_solicitud', [SolicitudesDireccionController::class, 'FirmaTodasDireccion'])->name('direccion:califica');
+    Route::post('/califica_usolicitud', [SolicitudesDireccionController::class, 'FirmaUnaDireccion'])->name('direccion:calificauna');
     Route::get('/finaliza_revision', [SolicitudesDireccionController::class, 'FinalizaSolicitudDireccion'])->name('direccion:finaliza');
 
 });
@@ -32,7 +33,8 @@ Route::prefix('subdireccion')->group(function(){
     Route::get('/solicitudes_pendientes', [SolicitudesSubController::class, 'TablasSolicitudesSub'])->name('sub:datos');
     Route::get('/resumen_solicitud/{id}', [SolicitudesSubController::class, 'ResumenSolicitudSub'])->name('sub:resumen');
     Route::get('/elimina_solicitud/{id}', [SolicitudesSubController::class, 'eliminaSolicitudSub'])->name('sub:elimina');
-    Route::post('/califica_solicitud', [SolicitudesSubController::class, 'FirmaTodasSub'])->name('sub:califica');
+    Route::post('/califica_solicitudes', [SolicitudesSubController::class, 'FirmaTodasSub'])->name('sub:califica');
+    Route::post('/califica_usolicitud', [SolicitudesSubController::class, 'FirmaUnaSub'])->name('sub:calificauna');
     Route::get('/finaliza_revision', [SolicitudesSubController::class, 'FinalizaSolicitud'])->name('sub:finaliza');
 
 });
@@ -44,6 +46,7 @@ Route::prefix('jud')->group(function(){
     Route::get('/resumen_solicitud/{id}', [SolicitudesJudController::class, 'ResumenSolicitudJud'])->name('jud:resumen');
     Route::get('/elimina_solicitud/{id}', [SolicitudesJudController::class, 'eliminaSolicitudJud'])->name('jud:elimina');
     Route::post('/califica_solicitud', [SolicitudesJudController::class, 'FirmaTodasJud'])->name('jud:califica');
+    Route::post('/califica_usolicitud', [SolicitudesJudController::class, 'FirmaUnaJud'])->name('jud:calificauna');
     Route::get('/finaliza_revision', [SolicitudesJudController::class, 'FinalizaSolicitudJud'])->name('jud:finaliza');
 
 });
