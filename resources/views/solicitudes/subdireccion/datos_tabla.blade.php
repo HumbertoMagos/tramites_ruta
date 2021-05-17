@@ -6,15 +6,7 @@
     <h1>SOLICITUDES PENDIENTES</h1>
 @stop
 @section('content')
-    @if ($errors->any())
-        <div class="alert bg-danger" role="alert">
-            <ul>
-                @foreach ($errors->all() as $error)
-                    <li>{{ $error }}</li>
-                @endforeach
-            </ul>
-        </div>
-    @endif
+
     <div class="card">
         <div class="card-body">
             <div class="row">
