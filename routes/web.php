@@ -33,9 +33,8 @@ Route::prefix('subdireccion')->group(function(){
     Route::get('/solicitudes_pendientes', [SolicitudesSubController::class, 'TablasSolicitudesSub'])->name('sub:datos');
     Route::get('/resumen_solicitud/{id}', [SolicitudesSubController::class, 'ResumenSolicitudSub'])->name('sub:resumen');
     Route::get('/elimina_solicitud/{id}', [SolicitudesSubController::class, 'eliminaSolicitudSub'])->name('sub:elimina');
-    Route::post('/califica_solicitudes', [SolicitudesSubController::class, 'FirmaTodasSub'])->name('sub:califica');
-    Route::post('/califica_usolicitud', [SolicitudesSubController::class, 'FirmaUnaSub'])->name('sub:calificauna');
-    Route::get('/finaliza_revision', [SolicitudesSubController::class, 'FinalizaSolicitud'])->name('sub:finaliza');
+    Route::get('/califica_solicitud', [SolicitudesSubController::class, 'FirmaTodasSub'])->name('sub:califica');
+    Route::get('/finaliza_revision', [SolicitudesSubController::class, 'FinalizaSolicitudSub'])->name('sub:finaliza');
 
 });
 
