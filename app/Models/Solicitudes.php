@@ -10,4 +10,8 @@ class Solicitudes extends Model
 {
     use SoftDeletes;
     use HasFactory;
+
+    static function scopeFirmar($model){
+        return $model->where('estatus','APROBADO')->where('firma','');
+    }
 }

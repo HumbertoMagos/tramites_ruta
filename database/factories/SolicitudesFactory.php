@@ -22,10 +22,12 @@ class SolicitudesFactory extends Factory
     public function definition()
     {
         return [
+            'estatus' => 'APROBADO',
             'placa' => $this->faker->sentence(3),
             'curp' => $this->faker->sentence(3),
             'folio' => $this->faker->sentence(3),
-            'informacion' => $this->faker->paragraph()
+            'informacion' => $this->faker->paragraph(),
+            'firma' => ""
         ];
     }
 }

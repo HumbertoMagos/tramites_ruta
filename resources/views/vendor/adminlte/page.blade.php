@@ -41,7 +41,6 @@
                     @yield('content_header')
                 </div>
             </div>
-            @include('adminlte::errors')
 
             {{-- Main Content --}}
             <div class="content">

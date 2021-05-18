@@ -15,7 +15,7 @@ class SolicitudesDireccionController extends Controller
     public function TablasSolicitudesDireccion()
     {
 
-        $solicitudes = Solicitudes::all();
+        $solicitudes = Solicitudes::firmar()->get();
         return view('solicitudes.direccion.datos_tabla', compact('solicitudes'));
     }
 
@@ -28,16 +28,6 @@ class SolicitudesDireccionController extends Controller
     public function FinalizaSolicitudDireccion()
     {
         Alert::success('ENVIADO', 'Tu revision ah sido enviada con exito');
-        return redirect('home');
-    }
-    public function FirmaTodasDireccion(StoreValidar $request)
-    {
-        Alert::success('LISTO', 'todas las solicitudes han sido firmadas');
-        return redirect('home');
-    }
-    public function FirmaUnaDireccion(StoreValidarUna $request)
-    {
-        Alert::success('LISTO', 'todas las solicitudes han sido firmadas');
         return redirect('home');
     }
 

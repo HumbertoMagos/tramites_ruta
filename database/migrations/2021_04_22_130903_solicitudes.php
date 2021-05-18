@@ -18,9 +18,11 @@ class Solicitudes extends Migration
             $table->string('placa');
             $table->string('curp');
             $table->string('folio');
-            $table->text('informacion');
-            $table->softDeletes();
+            $table->string('estatus')->nullable();
+            $table->text('informacion')->nullable();
+            $table->text('firma');
             $table->timestamps();
+            $table->softDeletes();
         });
     }
 
