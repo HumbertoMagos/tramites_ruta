@@ -42,8 +42,6 @@
                     class="far fa-times-circle"></i></a>
         </div>
 
-        | <form method="POST" action="{{ route('direccion:calificauna') }}" enctype="multipart/form-data">
-            @csrf
             <!-- The Modal -->
             <div class="modal fade" id="myModal">
                 <div class="modal-dialog modal-dialog-centered">
@@ -58,6 +56,8 @@
                         </div>
                         <!-- Modal body -->
                         <div class="modal-body">
+                            @livewire('firmar-uno')
+                            <!--
                             <div class="row text-center">
                                 <div class="col-md-12">
                                     <label>PLACA:</label>
@@ -78,14 +78,14 @@
                                         <input type="file" name='archivo' class="form-control-file" value="" >
                                     </div>
                                 </div>
-                            </div>
+                            </div>-->
                         </div>
 
                         <!-- Modal footer -->
-                        <div class="modal-footer">
+                       <!-- <div class="modal-footer">
                             <a class="btn btn-danger text-white" data-dismiss="modal">Cancelar</a>
                             <button type="submit" class="btn btn-success">Confirmar</button>
-                        </div>
+                        </div>-->
 
                     </div>
                 </div>
